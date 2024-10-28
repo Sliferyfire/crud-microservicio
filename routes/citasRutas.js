@@ -21,11 +21,11 @@ ruta.post("/nuevacita", async(req, res)=>{
         res.status(500).json({message: "Error al registrar la cita"});
 });
 
-// ruta.get("/editar/:id",async(req, res)=>{
-//     var user=await buscarPorID(req.params.id);
-//     console.log("Cita xd: "+user);
-//     res.render("citas/modificar",{user});
-// });
+ruta.get("/editar/:id",async(req, res)=>{
+    var user=await buscarPorID(req.params.id);
+    console.log("Cita xd: "+user);
+    res.render("citas/modificar",{user});
+});
 
 ruta.post("/buscarPorID/:id", async(req,res)=>{
     var cita = await buscarPorID(req.params.id);
